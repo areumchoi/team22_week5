@@ -98,5 +98,37 @@ public class AppTest
     
         assertEquals(205000,testGold6);
     }
-    
+	@Test
+	public void extraTimeGoldtest(){
+	    CallBill callGold7 = new CallBill("gold", 0, 130);
+	    int testGold7 = callGold7.totalBill();
+	    assertEquals(63500,testGold7);
+	}
+	@Test
+	public void extraTimeLine1Goldtest(){
+	    CallBill callGold8 = new CallBill("gold", 1, 130);
+	    int testGold8 = callGold8.totalBill();
+	    assertEquals(93500,testGold8);
+	}
+	@Test
+	public void extraTimeLine3DiscountGold(){
+		CallBill callGold9 = new CallBill("gold", 3, 130);
+		int testGold9 = callGold9.totalBill();
+	       
+		assertEquals(121500,testGold9);
+	}
+	@Test
+	public void extraTimeLine4DiscountGold(){
+		CallBill callGold10 = new CallBill("gold", 4, 130);
+		int testGold10 = callGold10.totalBill();
+	       
+		assertEquals(180500,testGold10);
+	}
+	@Test
+	public void extraTimeLine5DiscountGold(){
+		CallBill callGold11 = new CallBill("gold", 5, 130);
+		int testGold11 = callGold11.totalBill();
+	       
+		assertEquals(209500,testGold11);
+	}
 }
