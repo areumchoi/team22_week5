@@ -78,10 +78,9 @@ class CallBill {
 public class App {
 	private static final Logger log = LoggerFactory.getLogger(CallBill.class);
 
-	private App() {
+	public App() {
 		// private constructor to hide the implicit public one.
 	}
-
 	public static void main(String[] args) {
 		CallBill call = new CallBill();
 		Scanner input = new Scanner(System.in);

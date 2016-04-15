@@ -1,7 +1,12 @@
 package team22.calculatingBill;
 
 import static org.junit.Assert.*;
+
+import java.util.Scanner;
+
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * Unit test for simple App.
  */
@@ -12,7 +17,8 @@ public class AppTest
 	@Test
      public void testApp()
     {
-        assertTrue( true );
+        App.main(null);
+		assertTrue( true );
     }
 	@Test
     public void baseSilvertest(){
@@ -56,6 +62,56 @@ public class AppTest
     
         assertEquals(230000,testSilver6);
     }
+	
+	 @Test
+	   public void extraTimeSilvertest(){
+	       CallBill OverSilver = new CallBill(SILVER, 0, 70);
+	       
+	       int testOverSilver = OverSilver.totalBill();
+	       assertEquals(44400,testOverSilver);
+	       
+	    }
+	   @Test
+	    public void extraTimeLine1Silver(){
+	       CallBill OverSilver_Line1 = new CallBill(SILVER, 1, 70);
+	       
+	       int testOverSilver1 = OverSilver_Line1.totalBill();
+	       assertEquals(83400,testOverSilver1);
+	       
+	    }
+	   @Test
+	    public void extratimeLine2Silver(){
+	       CallBill OverSilver_line2 = new CallBill(SILVER, 2, 70);
+	       
+	       int testOverSilver2 = OverSilver_line2.totalBill();
+	       assertEquals(2*39000+39000+5400,testOverSilver2);
+	       
+	    }
+	   @Test
+	    public void extraTimeLine3DiscountSilver(){
+	       CallBill OverSilver_line3 = new CallBill(SILVER, 3, 70);
+	       
+	       int testOverSilver3 = OverSilver_line3.totalBill();
+	       assertEquals(3*39000-2000+39000+5400,testOverSilver3);
+	       
+	    }
+	   @Test
+	    public void extraTimeLine4DiscountSilver(){
+	       CallBill OverSilver_line4 = new CallBill(SILVER, 4, 70);
+	       
+	       int testOverSilver4 = OverSilver_line4.totalBill();
+	       assertEquals(4*39000-3000+39000+5400,testOverSilver4);
+	       
+	    }
+	   @Test
+	    public void extraTimeLine5DiscountSilver(){
+	       CallBill OverSilver_line5 = new CallBill(SILVER, 5, 70);
+	       
+	       int testOverSilver5 = OverSilver_line5.totalBill();
+	       assertEquals(5*39000-4000+39000+5400,testOverSilver5);
+	       
+	    }
+	
 	@Test
     public void baseGoldtest(){
         CallBill callGold1 = new CallBill(GOLD, 0, 60);        
@@ -100,35 +156,36 @@ public class AppTest
     }
 	@Test
 	public void extraTimeGoldtest(){
-	    CallBill callGold7 = new CallBill("gold", 0, 130);
+	    CallBill callGold7 = new CallBill(GOLD, 0, 130);
 	    int testGold7 = callGold7.totalBill();
 	    assertEquals(63500,testGold7);
 	}
 	@Test
 	public void extraTimeLine1Goldtest(){
-	    CallBill callGold8 = new CallBill("gold", 1, 130);
+	    CallBill callGold8 = new CallBill(GOLD, 1, 130);
 	    int testGold8 = callGold8.totalBill();
 	    assertEquals(93500,testGold8);
 	}
 	@Test
 	public void extraTimeLine3DiscountGold(){
-		CallBill callGold9 = new CallBill("gold", 3, 130);
+		CallBill callGold9 = new CallBill(GOLD, 3, 130);
 		int testGold9 = callGold9.totalBill();
 	       
-		assertEquals(121500,testGold9);
+		assertEquals(151500,testGold9);
 	}
 	@Test
 	public void extraTimeLine4DiscountGold(){
-		CallBill callGold10 = new CallBill("gold", 4, 130);
+		CallBill callGold10 = new CallBill(GOLD, 4, 130);
 		int testGold10 = callGold10.totalBill();
 	       
 		assertEquals(180500,testGold10);
 	}
 	@Test
 	public void extraTimeLine5DiscountGold(){
-		CallBill callGold11 = new CallBill("gold", 5, 130);
+		CallBill callGold11 = new CallBill(GOLD, 5, 130);
 		int testGold11 = callGold11.totalBill();
 	       
 		assertEquals(209500,testGold11);
 	}
+	
 }
